@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A multi-vendor e-commerce web app.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="eFood Multivendor">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Multifornecedor de eFood</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <!-- Este script instala service_worker.js para fornecer funcionalidade PWA para
+        aplicativo. Para mais informações, veja:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
+      });
+    }
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js"></script>
+
+  <div class="center">
+    <img src="logo.png" alt = "logo" height="250" width="250px" />
+    <br>
+    <div class="loader" style="width:250px;text-align: center;"><div class="classic-10"></div></div>
+  </div>
+
+
+  <script>
+    var firebaseConfig = {
+    apiKey: 'AIzaSyCKysoHbRT_4X2jpmL5ghbzo2psQpJIp1g',
+    authDomain: 'aplicativo-e0cbb-default-rtdb.firebaseio.com',
+    projectId: 'aplicativo-e0cbb',
+    storageBucket: 'aplicativo-e0cbb.appspot.com',
+    messagingSenderId: '625677742785',
+    appId: '1:625677742785:android:3f81e52fa8a71debb21a40',
+    measurementId: 'G-H2T06XPMRF',
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
